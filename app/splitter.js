@@ -1,20 +1,26 @@
 "use client";
 
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, seEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  console.log(scrollYProgress);
+  let scrollAmount = useTransform(scrollYProgress, [0, 1], ["0", "50%"]);
+
   return (
-    <div>
+    <motion.div>
       <svg
         id="visual"
         viewBox="0 0 1920 1080"
         className="w-full -mt-64 bg-bgColorDark"
       >
-        <path
+        <motion.path
+          style={{ y: scrollAmount }}
           d="M0 131L64 180.8C128 230.7 256 330.3 384 332.2C512 334 640 238 768 184.7C896 131.3 1024 120.7 1152 173.7C1280 226.7 1408 343.3 1536 337.7C1664 332 1792 204 1856 140L1920 76L1920 1081L1856 1081C1792 1081 1664 1081 1536 1081C1408 1081 1280 1081 1152 1081C1024 1081 896 1081 768 1081C640 1081 512 1081 384 1081C256 1081 128 1081 64 1081L0 1081Z"
           fill="#fd5825"
           className="-translate-y-10"
-        ></path>
+        ></motion.path>
         <path
           d="M0 420L64 411.5C128 403 256 386 384 405.2C512 424.3 640 479.7 768 443.2C896 406.7 1024 278.3 1152 270.2C1280 262 1408 374 1536 406.8C1664 439.7 1792 393.3 1856 370.2L1920 347L1920 1081L1856 1081C1792 1081 1664 1081 1536 1081C1408 1081 1280 1081 1152 1081C1024 1081 896 1081 768 1081C640 1081 512 1081 384 1081C256 1081 128 1081 64 1081L0 1081Z"
           fill="#fc7235"
@@ -160,6 +166,6 @@ export default function Home() {
           </svg>
         </ParallaxLayer>
       </Parallax> */}
-    </div>
+    </motion.div>
   );
 }
