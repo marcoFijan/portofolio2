@@ -5,7 +5,7 @@ export default function HeroIntroduction() {
     <div className=" w-full min-h-screen bg-bgColorDark flex  justify-center items-center flex-col box-border">
       <div className="max-w-wrapper mx-auto flex justify-center items-center flex-col">
         {/* Marco SVG */}
-        <div className="flex flex-wrap gap-x-16 gap-y-4 justify-center max-w-fit max-h-fit mx-8 animate-[lines_3s_ease-in-out_forwards]">
+        <div className="flex flex-wrap gap-x-16 gap-y-4 justify-center max-w-fit max-h-fit h-auto mx-8 animate-[lines_3s_ease-in-out_forwards]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 287.71 52.7"
